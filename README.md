@@ -37,7 +37,7 @@ $ git commit -m "[commit message]"
 $ git push
 ```
 
-### If you can't pull with the message below.
+### If you can't pull this with an ERROR message below.
 
 **'colony-vue' already exists in the index**
 or
