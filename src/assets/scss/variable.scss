@@ -1,0 +1,44 @@
+$red: rgb(240,60,60); // #f03c3c
+$red-light: rgb(224,180,180); // #e0b4b4
+$orange: rgb(255,160,0); // #ffa000
+$skyblue: rgb(133,183,217); // #85b7d9
+$blue: rgb(87,128,152); // #cbd2d6
+$purple: rgb(138,73,195); // #8a49c3
+$gray: #808695;
+
+/* fonts */
+@mixin font-family($font-name) { font-family: $font-name, Helvetica, Arial, sans-serif; }
+
+@mixin clearfix() {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin ellipsis() {
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin grab {
+	cursor: move; /* fallback if grab cursor is unsupported */
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+
+	/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+	&:active {
+		cursor: grabbing;
+		cursor: -moz-grabbing;
+		cursor: -webkit-grabbing;
+	}
+}
+
+@mixin hover ($opacity: 1, $transition: .3s) {
+	cursor: pointer;
+	transition: opacity $transition;
+	&:hover { opacity: $opacity; }
+}
