@@ -25,7 +25,6 @@ $ git submodule sync
 $ git submodule update --remote --merge
 ```
 
-
 ### If you push this in your main project.
 
 ```bash
@@ -35,6 +34,17 @@ $ cd colony-vue
 $ git add .
 $ git commit -m "[commit message]"
 $ git push
+```
+
+### If you can't clone this with an ERROR message below.
+
+**'If you want to reuse this local git directory instead of cloning again from**
+
+check git module and delete.
+```bash
+$ cd .git
+$ rm -rf modules/
+$ cd ..
 ```
 
 ### If you can't pull this with an ERROR message below.
@@ -54,4 +64,12 @@ $ git submodule add https://github.com/es5es5/colony-vue.git
 $ git add .
 $ git commit -m "submodule reset"
 $ git push
+```
+
+### If you can't build this with an ERROR message below.
+
+**Module build failed (from ./node_modules/sass-loader/dist/cjs.js):**
+
+```bash
+$ npm rebuild node-sass
 ```
