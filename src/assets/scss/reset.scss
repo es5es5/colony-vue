@@ -11,10 +11,10 @@ html, body {
   margin: 0;
   padding: 0;
 	position: relative;
-  font-size: 16px;																// DEFAULT	(ALWAYS)
-  @media (max-width: 80em) { font-size: 14px; }		// ≤ 1280px (XL)
-  @media (max-width: 64em) { font-size: 12px; }		// ≤ 1024px (LG)
-  @media (max-width: 48em) { font-size: 10px; }		// ≤ 768px	(MD)
+  // font-size: 16px;																// DEFAULT	(ALWAYS)
+  // @media (max-width: 80em) { font-size: 14px; }		// ≤ 1280px (XL)
+  // @media (max-width: 64em) { font-size: 12px; }		// ≤ 1024px (LG)
+  // @media (max-width: 48em) { font-size: 10px; }		// ≤ 768px	(MD)
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
