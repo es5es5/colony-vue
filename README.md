@@ -38,7 +38,7 @@ $ git push
 
 ### If you can't clone this with an ERROR message below.
 
-**'If you want to reuse this local git directory instead of cloning again from**
+**'If you want to reuse this local git directory instead of cloning again from'**
 
 check git module and delete.
 ```bash
