@@ -109,9 +109,7 @@ export default {
           this.$emit('input', option, this.id)
         }
 
-        if (this._isKey && this.initCallback) {
-          this.$emit('callback', option[this.dataKey], this.id)
-        }
+        this.emitCallback(option)
 
         /* istanbul ignore else */
         if (this.clearOnSelect) this.search = ''
@@ -119,5 +117,10 @@ export default {
       /* istanbul ignore else */
       if (this.closeOnSelect) this.deactivate()
     },
+    emitCallback (option) {
+      if (this._isKey && this.initCallback) {
+        this.$emit('callback', option[this.dataKey], this.id)
+      }
+    }
   }
 }
