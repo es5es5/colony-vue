@@ -1,7 +1,7 @@
-import Multiselect from './Multiselect'
+import MultiSelect from './MultiSelect'
 import multiselectMixin from './multiselectMixin'
 import pointerMixin from './pointerMixin'
 
-export default Multiselect
+export default MultiSelect
 
-export { Multiselect, multiselectMixin, pointerMixin }
+export { MultiSelect, multiselectMixin, pointerMixin }
