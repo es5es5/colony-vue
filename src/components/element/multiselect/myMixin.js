@@ -66,6 +66,34 @@ export default {
     }
   },
   methods: {
+    removeElement (option, shouldClose = true) {
+      /* istanbul ignore else */
+      if (this.disabled) return
+      /* istanbul ignore else */
+      if (option.$isDisabled) return
+      /* istanbul ignore else */
+      if (!this.allowEmpty && this.internalValue.length <= 1) {
+        this.deactivate()
+        return
+      }
+
+      const index = typeof option === 'object'
+        ? this.valueKeys.indexOf(option[this.trackBy])
+        : this.valueKeys.indexOf(option)
+
+      this.$emit('remove', option, this.id)
+      if (this.multiple) {
+        const newValue = this.internalValue.slice(0, index).concat(this.internalValue.slice(index + 1))
+        this.$emit('input', newValue, this.id)
+      } else {
+        this.$emit('input', null, this.id)
+      }
+
+      /* istanbul ignore else */
+      if (this.closeOnSelect && shouldClose) this.deactivate()
+
+      this.emitCallback(null)
+    },
     /**
      * Add the given option to the list of selected options
      * or sets the option as the selected option.
@@ -119,7 +147,7 @@ export default {
     },
     emitCallback (option) {
       if (this._isKey && this.initCallback) {
-        this.$emit('callback', option[this.dataKey], this.id)
+        this.$emit('callback', option ? option[this.dataKey] : null, this.id)
       }
     }
   }
